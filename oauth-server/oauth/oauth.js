@@ -3,4 +3,4 @@ var model = require('./model.js')
 
 module.exports = new oauthServer({
   model: model
-});
+})
