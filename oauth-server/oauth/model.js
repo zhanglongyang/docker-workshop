@@ -14,6 +14,11 @@ function getClient(clientId, clientSecret) {
     .findOne({
       client_id: clientId,
       client_secret: clientSecret
+    }, {
+      id: 1,
+      client_id: 1,
+      client_secret: 1,
+      redirect_uri: 1
     })
     .then(function(client) {
       if (!client) return new Error("client not found")
@@ -40,6 +45,10 @@ function getClient(clientId, clientSecret) {
 function getUser(username, password) {
   return db.User.findOne({
       username: username
+    }, {
+      id: 1,
+      username: 1,
+      password: 1
     })
     .then(function(user) {
       return user.password == password ? user.toJSON() : false;
