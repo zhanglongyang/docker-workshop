@@ -1,3 +1,4 @@
+const _ = require('lodash')
 const db = require('./db')
 
 function getAccessToken(bearerToken) {
@@ -9,13 +10,11 @@ function getAuthorizationCode(code) {
 }
 
 function getClient(clientId, clientSecret) {
-  const options = {
-    client_id: clientId,
-    client_secret: clientSecret
-  }
-
   return db.OAuthClient
-    .findOne(options)
+    .findOne({
+      client_id: clientId,
+      client_secret: clientSecret
+    })
     .then(function(client) {
       if (!client) return new Error("client not found")
 
@@ -39,11 +38,8 @@ function getClient(clientId, clientSecret) {
 }
 
 function getUser(username, password) {
-  return User.findOne({
-      where: {
-        username: username
-      },
-      attributes: ['id', 'username', 'password'],
+  return db.User.findOne({
+      username: username
     })
     .then(function(user) {
       return user.password == password ? user.toJSON() : false;
@@ -55,14 +51,14 @@ function getUser(username, password) {
 
 function saveToken(token, client, user) {
   return Promise.all([
-      OAuthAccessToken.create({
+      db.OAuthAccessToken.create({
         access_token: token.accessToken,
         expires: token.accessTokenExpiresAt,
         client_id: client.id,
         user_id: user.id,
         scope: token.scope
       }),
-      token.refreshToken ? OAuthRefreshToken.create({ // no refresh token for client_credentials
+      token.refreshToken ? db.OAuthRefreshToken.create({ // no refresh token for client_credentials
         refresh_token: token.refreshToken,
         expires: token.refreshTokenExpiresAt,
         client_id: client.id,
@@ -71,12 +67,11 @@ function saveToken(token, client, user) {
       }) : []
     ])
     .then(function(resultsArray) {
-      return _.assign( // expected to return client and user, but not returning
-        {
+      return _.assign({
           client: client,
           user: user,
-          access_token: token.accessToken, // proxy
-          refresh_token: token.refreshToken, // proxy
+          accessToken: token.accessToken,
+          refreshToken: token.refreshToken,
         },
         token
       )
