@@ -10,4 +10,4 @@ COPY . /app/
 
 CMD npm run start
 
-EXPOSE 3001
+EXPOSE 3002
