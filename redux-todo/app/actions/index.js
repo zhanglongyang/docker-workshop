@@ -20,3 +20,11 @@ export const toggleTodo = (id) => {
     id
   }
 }
+
+export const login = (name, password) => {
+  return {
+    type: 'LOGIN',
+    name,
+    password
+  }
+}
