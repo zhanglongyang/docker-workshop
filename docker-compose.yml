@@ -1,0 +1,12 @@
+version: '2'
+services:
+  redux-todo:
+    build: ./redux-todo
+    ports:
+      - "3001:3001"
+    depends_on:
+      - oauth-server
+  oauth-server:
+    build: ./oauth-server
+    ports:
+      - "3002:3002"
