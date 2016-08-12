@@ -6,7 +6,13 @@ services:
       - "3001:3001"
     depends_on:
       - oauth-server
+
   oauth-server:
     build: ./oauth-server
     ports:
       - "3002:3002"
+
+  db:
+    image: mongo:3.3
+    ports:
+      - "27017:27017"

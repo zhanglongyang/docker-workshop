@@ -1,8 +1,9 @@
 var mongoose = require('mongoose')
+
 mongoose.connect(
-  'mongodb://username:password@ds139675.mlab.com:39675/oauth-server',
+  'mongodb://localhost/oauth-server',
   function(err) {
-    if (err) return console.log(err)
+    if (err) return console.log("=======>> ", err)
     console.log('Mongoose Connected')
   })
 
