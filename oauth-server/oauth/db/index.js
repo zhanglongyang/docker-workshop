@@ -1,11 +1,10 @@
 var mongoose = require('mongoose')
 
-mongoose.connect(
-  'mongodb://localhost/oauth-server',
-  function(err) {
-    if (err) return console.log("=======>> ", err)
-    console.log('Mongoose Connected')
-  })
+mongoose.connect('mongodb://db/oauth-server', function(err) {
+  if (err) return console.log(err)
+
+  console.log('Mongoose Connected')
+})
 
 module.exports = {
   OAuthAccessToken: require('./OAuthAccessToken'),

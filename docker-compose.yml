@@ -4,13 +4,21 @@ services:
     build: ./redux-todo
     ports:
       - "3001:3001"
-    depends_on:
+    volumes:
+      - ./redux-todo:/app
+      - /app/node_modules
+    links:
       - oauth-server
 
   oauth-server:
     build: ./oauth-server
     ports:
       - "3002:3002"
+    volumes:
+      - ./oauth-server:/app
+      - /app/node_modules
+    links:
+      - db
 
   db:
     image: mongo:3.3
