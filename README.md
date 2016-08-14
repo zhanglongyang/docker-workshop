@@ -9,8 +9,9 @@
   - Open Standards
 
   <img src="./docs/images/pre-container-goods-movement.jpg" height="200px"/>&nbsp; vs &nbsp;<img src="./docs/images/post-container-goods-movement.jpg" height="200px"/>
+3. install [jq](https://stedolan.github.io/jq/) `brew install jq`
 
 ## Steps
 ### 1. [Get started with docker basic commands](./docs/step-1.md)
-### 2. [Link two running docker containers](./docs/step-2.md)
+### 2. [Get started with Dockerfile](./docs/step-2.md)
 ### 3. [Get started with docker-compose](./docs/step-3.md)

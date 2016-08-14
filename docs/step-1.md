@@ -1,7 +1,7 @@
 # Get started with docker basic commands
 
 ## Hello World!
-- `docker run busybox echo "Hello World`
+- `docker run hello-world`
 
 ## Images
 - `docker pull ubuntu`
