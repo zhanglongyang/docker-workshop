@@ -14,4 +14,5 @@
 ## Steps
 ### 1. [Get started with docker basic commands](./docs/step-1.md)
 ### 2. [Get started with Dockerfile](./docs/step-2.md)
-### 3. [Get started with docker-compose](./docs/step-3.md)
+### 3. [Connect Docker Containers](./docs/step-3.md)
+### 4. [Get started with docker-compose](./docs/step-4.md)

@@ -24,5 +24,7 @@ FROM nginx
 #### 2. `docker build -t "nginx-with-html" .`
 #### 3. `docker images | grep nginx-with-html`
 #### 4. `docker run -p 80:80 -v $(pwd):/usr/share/nginx/html:ro nginx-with-html`
-- changes in `index.html` **won't** show up this time!
 - `docker inspect -f '{{json .Mounts}}' $CONTAINER | jq .`
+
+## Additional resources:
+[Best practices for writing Dockerfiles](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/)
