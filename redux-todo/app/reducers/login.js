@@ -12,6 +12,7 @@ const login = (state = false, action) => {
         return res.json()
       }).then(function(v) {
         console.log(v)
+        window.location.href = "/#app"
       })
 
       return true

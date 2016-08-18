@@ -1,11 +1,13 @@
 import React from 'react'
-import Login from './Login'
-import TodoApp from './TodoApp'
+import Footer from './Footer'
+import AddTodo from '../containers/AddTodo'
+import VisibleTodoList from '../containers/VisibleTodoList'
 
 const App = () => (
   <div>
-    <Login/>
-    <TodoApp/>
+    <AddTodo/>
+    <VisibleTodoList/>
+    <Footer/>
   </div>
 )
 

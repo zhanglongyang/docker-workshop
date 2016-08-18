@@ -6,7 +6,6 @@ services:
       - "3001:3001"
     volumes:
       - ./redux-todo:/app
-      - /app/node_modules
     links:
       - oauth-server
 
@@ -16,7 +15,6 @@ services:
       - "3002:3002"
     volumes:
       - ./oauth-server:/app
-      - /app/node_modules
     links:
       - db
 
