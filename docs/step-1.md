@@ -31,3 +31,8 @@ Containers
 -	`docker stop CONTAINER`
 -	`docker ps -a` to list **all** containers
 -	`docker rm CONTAINER`
+
+Additional resources:
+---------------------
+
+[Understand the architecture](https://docs.docker.com/v1.8/introduction/understanding-docker/)
