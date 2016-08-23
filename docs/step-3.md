@@ -1,6 +1,8 @@
 Connect Docker Containers
 =========================
 
+![](./images/architecture.png)
+
 Docerize Front-end application
 ------------------------------
 
