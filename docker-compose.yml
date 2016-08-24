@@ -6,7 +6,7 @@ services:
       - "3001:3001"
     volumes:
       - ./redux-todo:/app
-    links:
+    depends_on:
       - oauth-server
 
   oauth-server:
@@ -15,7 +15,7 @@ services:
       - "3002:3002"
     volumes:
       - ./oauth-server:/app
-    links:
+    depends_on:
       - db
 
   db:

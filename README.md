@@ -11,7 +11,7 @@ Preparation
 
 	<img src="./docs/images/vm.png" height="200px"/>&nbsp; vs &nbsp;<img src="./docs/images/container.png" height="200px"/>
 
-	-	Open Standards
+	-	Open Standards -> [Build, Ship, and Run Any App, Anywhere]
 
 	<img src="./docs/images/pre-container-goods-movement.jpg" height="200px"/>&nbsp; vs &nbsp;<img src="./docs/images/post-container-goods-movement.jpg" height="200px"/>
 
